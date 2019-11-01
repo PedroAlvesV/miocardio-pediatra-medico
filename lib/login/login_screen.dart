@@ -1,113 +1,50 @@
 import 'package:flutter/material.dart';
+import 'package:miocardio/dashboard/home.dart';
+import 'package:miocardio/util/const.dart' as Constant;
 
-class LoginScreen extends StatelessWidget{
+class Login extends StatefulWidget{
+	LoginState createState() => LoginState();
+
+}
+class LoginState extends State<Login>{
+
+	@override
 	Widget build(BuildContext context) {
-		return Scaffold(
-		/*appBar: AppBar(
-			title:Text("Login"),
-			centerTitle: true,
-			actions: <Widget>[
-				FlatButton(
-					child: Text(
-					"CRIAR CONTA",
-					style: TextStyle(
-							fontSize: 15.0
-						)
-					),
-					textColor: Colors.white,
-					onPressed:(){}
-
-				)
-
-			],			
-
-		),*/
-		backgroundColor:Colors.pink[100],
-		body:
-
-
-			
-			
-			//Text("miocadio"),
-			//SizedBox(height:80.0),
-			 Form(
-			child:ListView(
-				padding: EdgeInsets.all(20),
-				children:<Widget>[
-					SizedBox(height:70.0),
-					Center(
-						child:Text("Miocardio",
-							style: TextStyle(fontWeight: FontWeight.bold,
-								fontSize: 50
-							),
-							
-						)
-					),
-					Center(
-						child:Text("pediatra",
-							style: TextStyle(
-							fontWeight: FontWeight.bold,
-							fontSize: 40
-							),
-							
-						)
-					),
-					SizedBox(height:90.0),
-					
-						
-
-					TextFormField(
-					
-						decoration: InputDecoration(
-							hintText: "E-mail",
+		return Scaffold( // inicio da estrutura da pagina
+			backgroundColor: Constant.BG_COLOR,
+			body: Container(
+				padding: EdgeInsets.all(30),
+				child: Column( //Columa que contem os somponentes da pagina
+					mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+					children: <Widget>[
+						Image(image: AssetImage('assets/logo.png'), width: 400, height: 200,), //imagem do logotipo
+						TextFormField( //Form do email
+								decoration: InputDecoration(
+									labelText: 'Email',
+									hoverColor: Colors.white,
+								)
 						),
-						keyboardType:TextInputType.emailAddress,
-					),
-					
-					SizedBox(height:17.0),
-					TextFormField(
-					decoration: InputDecoration(
-						hintText: "Senha",
-					),
-					obscureText: true,
-					
-					),
-					
-					
-					SizedBox(height:17.0),
-					Container(
-						
-						padding:EdgeInsets.only(left: 50,right:50 ),
-						
-						child: RaisedButton(
-							child: Text("Entrar",
-								style:TextStyle(
-								fontSize:15.0,
-								)						
-							),
-							textColor: Colors.white,
-							color: Colors.pink[200],
-							onPressed:(){}
+						TextFormField( //Form da senha
+								maxLength: 40,
+								decoration: InputDecoration(
+										labelText: 'Senha'
+								)
 						),
-						
-					),
-					Align(
-						alignment:Alignment.center,
-						child: FlatButton(
-							onPressed: (){},
-							child:Text("Esqueci minha senha"),
-							
-						)
-					),
-				],
-			)
-			
-		
-
-		),
+						FlatButton(
+								padding: EdgeInsets.only(top: 0.0),
+								shape: Border.all(width: 0.5, color: Colors.red),
+								color: Color.fromRGBO(249, 124, 124, 1),
+								child: Text('Salvar',
+									style: TextStyle(
+										color: Colors.white,
+									),
+								),
+								onPressed: (){
+									Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Dashboard()));
+								}),
+					],
+				),
+			),
 		);
-
 	}
-
-
 }

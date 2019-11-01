@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:miocardio/login/login_screen.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -9,7 +10,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
      
-      home: LoginScreen(),
+      home: Login(),
     );
   }
 }
