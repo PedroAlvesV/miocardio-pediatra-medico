@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:miocardio/util/const.dart' as Constant;
+import 'package:miocardio/util/const.dart';
+import 'package:miocardio/login/authentication.dart';
 
 class Dashboard extends StatefulWidget{
+  String userId;
+  final BaseAuth auth;
+  final VoidCallback logoutCallback;
+
+  Dashboard({this.userId,this.auth, this.logoutCallback});
+
   DashboardState createState() => DashboardState();
 
 }
@@ -11,10 +18,12 @@ List<String> vetTeste=["Miguela","Alice","Julia","Gabriel","Laura"];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Constant.BG_COLOR,
+        backgroundColor: APPColors().background,
         appBar: AppBar(
-          title: const Text('Teste de appbar'),
-          backgroundColor: Constant.BG_COLOR,
+          title: const Text('MiocardioPediatra'),
+          backgroundColor: APPColors().loginButton,
+          leading: BackButton(),
+          centerTitle: true,
         ),
         body:  Column(
             children: <Widget>[

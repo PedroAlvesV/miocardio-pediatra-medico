@@ -1,4 +1,10 @@
 import 'package:flutter/material.dart';
 
-const BG_COLOR = Color.fromRGBO(253, 224, 224, 1);
+class APPColors {
+
+  final background = Color.fromRGBO(253, 224, 224, 1);
+  final loginButton = Color.fromRGBO(245, 117, 117, 1);
+
+  APPColors();
+}
 
