@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'login_screen.dart';
+import 'package:miocardio/root/root.dart';
+import 'package:miocardio/login/authentication.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -8,8 +10,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-     
-      home: LoginScreen(),
+      home: Root(auth: new Auth())
     );
   }
 }
