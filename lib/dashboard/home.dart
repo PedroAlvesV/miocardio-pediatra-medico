@@ -18,13 +18,31 @@ List<String> vetTeste=["Miguela","Alice","Julia","Gabriel","Laura"];
         ),
         body:  Column(
             children: <Widget>[
+              menuADD(),
               
-              Expanded(
+              
+           ],
+          )  
+    );
+  }
+  int altura(int NumroElemento ){
+    if(((NumroElemento+1) % 2) == 0){
+      return (((NumroElemento+1)/2)).toInt();
+    }
+    else {
+      int alt = ((NumroElemento+1)/2).toInt() ;
+      return alt +1;
+    }
+
+
+  }
+
+  Widget menuADD(){
+    return Expanded(
                 child:ListView.builder(
                   padding: EdgeInsets.only(top: 10.0),
                   itemCount: altura(vetTeste.length),
                   itemBuilder: (BuildContext context,int index){
-                      //return Text('${(index+1)*2}');
                       if(((index+1)*2) < vetTeste.length+1){    
                         return Row(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -117,25 +135,15 @@ List<String> vetTeste=["Miguela","Alice","Julia","Gabriel","Laura"];
                   },
                 
                 ),
-              ),
-           ],
-          )  
-    );
-  }
-  int altura(int NumroElemento ){
-    if(((NumroElemento+1) % 2) == 0){
-      return (((NumroElemento+1)/2)).toInt();
-    }
-    else {
-      int alt = ((NumroElemento+1)/2).toInt() ;
-      return alt +1;
-    }
+              );
+    
+
 
 
   }
-
-
 
 }
+
+
 
 
