@@ -58,24 +58,33 @@ List<String> vetTeste=["Miguela","Alice","Julia","Gabriel","Laura"];
                           children:<Widget>[ 
                           Padding(
                             padding: EdgeInsets.only(left: 2,top: 6,right: 10,bottom: 2),
-                            child: Container(
-                              height: 100,
-                              width: 100,
-                              color:Colors.pink[100],
-                              child: Padding(
-                                padding: EdgeInsets.all(4.0),
+                                child: GestureDetector(  
+                                onTap: (){menuModalBottomSheet();},
                                 child: Container(
-                                  color:Colors.pink[50],
-                                  child: Center(
-                                    child: Text('${vetTeste[index*2]}', ),
+                                  height: 100,
+                                  width: 100,
+                                  color:Colors.pink[100],
+                                  child: Padding(
+                                    padding: EdgeInsets.all(4.0),
+                                    child: Container(
+                                      color:Colors.pink[50],
+                                      
+                                    child:  Center(
+                                      child: Text('${vetTeste[index*2]}', ),
+                                    )
+                                      
+                                  ),
                                   )
                                 ),
-
                               ),
-                          ),
+                              
+                            
+                          
                         ),
                         Padding(
                           padding: EdgeInsets.only(left: 10,top: 6,right: 2,bottom: 2),
+                          child: GestureDetector(  
+                          onTap: (){menuModalBottomSheet();},
                           child:Container(
                               height: 100,
                               width: 100,
@@ -92,6 +101,7 @@ List<String> vetTeste=["Miguela","Alice","Julia","Gabriel","Laura"];
 
                              ),
                             ),
+                          )
                         )
                         ]
                         );
@@ -102,6 +112,8 @@ List<String> vetTeste=["Miguela","Alice","Julia","Gabriel","Laura"];
                           children:<Widget>[
                            Padding(
                             padding: EdgeInsets.only(left: 2,top: 6,right: 10,bottom: 2),
+                            child: GestureDetector(  
+                            onTap: (){menuModalBottomSheet();},
                             child: Container(
                               height: 100,
                               width: 100,
@@ -116,9 +128,12 @@ List<String> vetTeste=["Miguela","Alice","Julia","Gabriel","Laura"];
 
                               ),
                             ),
+                            )
                           ),
                           Padding(
                              padding: EdgeInsets.only(left: 10,top: 6,right: 2,bottom: 2),
+                             
+                            
                             child: Container(
                               height: 100,
                               width: 100,
@@ -127,6 +142,7 @@ List<String> vetTeste=["Miguela","Alice","Julia","Gabriel","Laura"];
                                   size: 50.0,
                               )
                             )
+                            
                           )
                         ]
                         );
@@ -150,6 +166,21 @@ List<String> vetTeste=["Miguela","Alice","Julia","Gabriel","Laura"];
 
 
   }
+  void menuModalBottomSheet() {
+    showModalBottomSheet(context:context,builder: (context){
+      return Column(children: <Widget>[
+        ListTile(
+          title: Text("nome"),
+        ),
+      ],);
+
+    });
+  }  
+
+
+  
+
+
 
 }
 
