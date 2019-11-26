@@ -82,21 +82,22 @@ void initState(){
                           Padding(
                             padding: EdgeInsets.only(left: 2,top: 6,right: 10,bottom: 2),
                                 child: GestureDetector(
-                                onTap: (){menuModalBottomSheet(index*2);},
-                                child: Container(
-                                  height: 100,
-                                  width: 100,
-                                  color:Colors.pink[100],
-                                  child: Padding(
-                                    padding: EdgeInsets.all(4.0),
-                                    child: Container(
-                                      color:Colors.pink[50],
-                                      
-                                    child:  Center(
-                                      child: Text('${vetTeste[index*2]["nome"]}', ),
-                                    )
-                                      
-                                  ),
+                                  onTap: (){menuModalBottomSheet(index*2);},
+                                  onLongPress: ,
+                                  child: Container(
+                                    height: 100,
+                                    width: 100,
+                                    color:Colors.pink[100],
+                                    child: Padding(
+                                      padding: EdgeInsets.all(4.0),
+                                      child: Container(
+                                        color:Colors.pink[50],
+
+                                        child:  Center(
+                                          child: Text('${vetTeste[index*2]["nome"]}', ),
+                                        )
+
+                                    ),
                                   )
                                 ),
                               ),
@@ -210,5 +211,5 @@ void initState(){
 
     });
   }
- 
+
 }

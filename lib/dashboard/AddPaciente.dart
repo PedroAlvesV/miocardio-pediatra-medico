@@ -81,7 +81,10 @@ class AddPacienteState extends State<AddPaciente>{
                 controller: nomeController,
               ),
               RaisedButton(
-                onPressed: (){salvarDados();},
+                onPressed: (){
+                  salvarDados();
+                  Navigator.pop(context);
+                  },
                 child: Text("Salvar"),
                 color: Colors.pink[100],
                 
