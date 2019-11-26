@@ -81,7 +81,7 @@ void initState(){
                           children:<Widget>[ 
                           Padding(
                             padding: EdgeInsets.only(left: 2,top: 6,right: 10,bottom: 2),
-                                child: GestureDetector(  
+                                child: GestureDetector(
                                 onTap: (){menuModalBottomSheet(index*2);},
                                 child: Container(
                                   height: 100,
@@ -210,18 +210,5 @@ void initState(){
 
     });
   }
-  
  
-    
-
-
-
-  
-
-
-
 }
-
-
-
-
