@@ -18,52 +18,34 @@ end
 local answersQ1 = {
    {
       text = "Sim",
-      scores = {
-         2 = -10,
-         3 = -5,
-      }
+      scores = {nil, -10, -3}
    },
    {
       text = "Não",
-      scores = {
-         2 = 10,
-         4 = 2,
-      }
+      scores = {nil, 10, nil, 2}
    },
    {
       text = "Não sei",
-      scores = {
-         1 = -1,
-         3 = 5,
-         4 = -2,
-      }
+      scores = {-1, nil, 5, -2}
    },
 }
 
 local answersQ2 = {
    {
       text = "Nunca",
-      scores = {
-         5 = 3,
-      }
+      scores = {nil, nil, nil, nil, 3}
    },
    {
       text = "Raramente",
-      scores = {
-         5 = 1,
-      }
+      scores = {nil, nil, nil, nil, 1}
    },
    {
       text = "Ocasionalmente",
-      scores = {
-         5 = -1,
-      }
+      scores = {nil, nil, nil, nil, -1}
    },
       {
       text = "Frequentemente",
-      scores = {
-         5 = -3,
-      }
+      scores = {nil, nil, nil, nil, -3}
    },
 }
 
@@ -72,3 +54,4 @@ local no2 = Node.new(2, Question.new("PerguntaTeste2", answersQ2))
 local e1 = Edge.new(no1, no2)
 
 local g = Graph.new({no1, no2}, {e1})
+
