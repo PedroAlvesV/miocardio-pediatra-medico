@@ -49,9 +49,13 @@ local answersQ2 = {
    },
 }
 
-local no1 = Node.new(1, Question.new("PerguntaTeste1", answersQ1))
-local no2 = Node.new(2, Question.new("PerguntaTeste2", answersQ2))
+local no1 = Node.new(Question.new("PerguntaTeste1", answersQ1))
+local no2 = Node.new(Question.new("PerguntaTeste2", answersQ2))
 local e1 = Edge.new(no1, no2)
 
 local g = Graph.new({no1, no2}, {e1})
 
+function start(g, nodeIndex)
+   local firstNode = g.getNode(nodeIndex)
+   
+end

@@ -8,4 +8,7 @@ function Graph.new(nodes, edges)
    return setmetatable(self, { __index = Graph })
 end
 
+function Graph:getNode(i)
+   return self.nodes[i]
+
 return Graph

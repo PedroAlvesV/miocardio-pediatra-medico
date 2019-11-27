@@ -1,8 +1,7 @@
 local Node = {}
 
-function Node.new(id, question)
+function Node.new(question)
    local self = {
-      id = id,
       question = question,
    }
    return setmetatable(self, { __index = Node })
