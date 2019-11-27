@@ -83,7 +83,7 @@ void initState(){
                             padding: EdgeInsets.only(left: 2,top: 6,right: 10,bottom: 2),
                                 child: GestureDetector(
                                   onTap: (){menuModalBottomSheet(index*2);},
-                                  onLongPress: ,
+                                  //onLongPress: ,
                                   child: Container(
                                     height: 100,
                                     width: 100,
