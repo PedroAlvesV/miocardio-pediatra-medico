@@ -28,6 +28,7 @@ void initState(){
    FileArquivo a =  new FileArquivo();
 
    a.CriaArquivo();
+  
    a.ReadData().then((data){
      setState(() {
        vetTeste = json.decode(data);
@@ -83,7 +84,7 @@ void initState(){
                             padding: EdgeInsets.only(left: 2,top: 6,right: 10,bottom: 2),
                                 child: GestureDetector(
                                   onTap: (){menuModalBottomSheet(index*2);},
-                                  onLongPress: ,
+                                  
                                   child: Container(
                                     height: 100,
                                     width: 100,
@@ -205,7 +206,13 @@ void initState(){
     showModalBottomSheet(context:context,builder: (context){
       return Column(children: <Widget>[
         ListTile(
-          title: Text("${vetTeste[posicao]["nome"]}"),
+          title: Text("Nome: ${vetTeste[posicao]["nome"]}"),
+        ),
+         ListTile(
+          title: Text("Idade: ${vetTeste[posicao]["idade"]}"),
+        ),
+        ListTile(
+          title: Text("Peso: ${vetTeste[posicao]["peso"]}"),
         ),
       ],);
 

@@ -20,6 +20,8 @@ class AddPacienteState extends State<AddPaciente>{
   Map<String,dynamic> teste = Map();
   AddPacienteState(this.vetTeste);
   TextEditingController nomeController = TextEditingController();
+  TextEditingController idadeController = TextEditingController();
+  TextEditingController pesoController = TextEditingController();
   
   @override
   void initState() {
@@ -49,11 +51,15 @@ class AddPacienteState extends State<AddPaciente>{
   void salvarDados(){
     teste = Map();
     teste["nome"] = nomeController.text;
+    teste["idade"] = idadeController.text;
+    teste["peso"] = pesoController.text; 
     vetTeste.add(teste);
     FileArquivo a =  new FileArquivo();
     a.CriaArquivo();
     a.SaveData(vetTeste);
      nomeController.text = "";
+     pesoController.text="";
+     idadeController.text = "";
 
 
   }
@@ -73,12 +79,31 @@ class AddPacienteState extends State<AddPaciente>{
             children: <Widget>[
               TextField(keyboardType: TextInputType.text,
                 decoration: InputDecoration(
-                  labelText: "nome",
+                  labelText: "Nome",
                   labelStyle: TextStyle(color: Colors.pink[200]),
                   
                 ),
                 style: TextStyle(color: Colors.pink[200],fontSize: 20.0),
                 controller: nomeController,
+              ),
+              TextField(keyboardType: TextInputType.number,
+                decoration: InputDecoration(
+                  labelText: "Peso",
+                  labelStyle: TextStyle(color: Colors.pink[200]),
+                  
+                ),
+                style: TextStyle(color: Colors.pink[200],fontSize: 20.0),
+                controller: pesoController,
+              ),
+
+              TextField(keyboardType: TextInputType.number,
+                decoration: InputDecoration(
+                  labelText: "Idade",
+                  labelStyle: TextStyle(color: Colors.pink[200]),
+                  
+                ),
+                style: TextStyle(color: Colors.pink[200],fontSize: 20.0),
+                controller: idadeController,
               ),
               RaisedButton(
                 onPressed: (){
